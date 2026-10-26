@@ -2,7 +2,8 @@
 
 **Policy ID:** AI-GOV-001  
 **Status:** Proposed baseline  
-**Applies to:** AI coding agents and automated code-modification tools.
+**Applies to:** All AI coding agents and automated code-modification tools (Claude, Cursor, Gemini, OpenAI, Copilot, and other platforms).  
+**Platform-specific implementation:** See `PLATFORMS.md` for enforcement details on your chosen agent.
 
 ## 1. Priority and scope
 
@@ -121,9 +122,11 @@ Prefer maintained dependencies with appropriate licences. Review purpose, compat
 
 ## 11. Git and change management
 
-Under the default hidden-file restriction, do not inspect hidden Git metadata or run commands that require reading prohibited hidden paths. Do not delete or overwrite user changes. Do not commit, tag, push, release, force-push, reset, clean, rebase, or amend history without explicit authorisation.
+Do not delete or overwrite user changes. Do not commit, tag, push, release, force-push, reset, clean, rebase, or amend history without explicit authorisation.
 
-Do not modify CI/CD or access-control configuration without approval. If safe repository inspection is blocked by this policy, request an approved workflow rather than bypassing the restriction.
+Under the default hidden-file restriction (e.g., `.git/`, `.github/`), do not inspect hidden Git metadata or run commands that require reading prohibited hidden paths. Do not bypass this restriction with shell commands or indirect techniques.
+
+Do not modify CI/CD configuration, access-control configuration, or security scanning rules without approval. If safe repository inspection is blocked by this policy, request an approved workflow rather than bypassing the restriction.
 
 ## 12. Testing and verification
 
